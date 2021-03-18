@@ -28,7 +28,7 @@ begin
 end
 
 
-quad = 1.0 # voltage independent when quad = 0
+quad = 0.0 # voltage independent when quad = 0
 verbose = true
 ###### the constant values are defined ######
 function ACDCACLine()
