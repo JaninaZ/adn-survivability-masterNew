@@ -215,115 +215,142 @@ savefig("$dir/simulationplots/CIGRE_Dynamic_2ADN_QerrSingle.png")
 # Δ = sol.prob.f.f.cpg.controller(sol(sol.t), nothing, sol.t) |> first
 
 ###### absolute value of voltage ######
-U_real_slack=[u[1] for u in sol.u].^2
-U_imag_slack= [u[2] for u in sol.u].^2
-voltage_slack = zeros(length(U_real_slack))
-for i in 1:length(U_real_slack)
-    voltage_slack[i] = sqrt.(U_real_slack[i] .+ U_imag_slack[i])
-end
-
-U_real_n2=[u[3] for u in sol.u].^2
-U_imag_n2= [u[4] for u in sol.u].^2
-voltage_n2 = zeros(length(U_real_slack))
-for i in 1:length(U_real_slack)
-    voltage_n2[i] = sqrt.(U_real_n2[i] .+ U_imag_n2[i])
-end
-
-U_real_n3=[u[10] for u in sol.u].^2
-U_imag_n3= [u[11] for u in sol.u].^2
-voltage_n3 = zeros(length(U_real_slack))
-for i in 1:length(U_real_slack)
-    voltage_n3[i] = sqrt.(U_real_n3[i] .+ U_imag_n3[i])
-end
-
-U_real_n4=[u[17] for u in sol.u].^2
-U_imag_n4= [u[18] for u in sol.u].^2
-voltage_n4 = zeros(length(U_real_slack))
-for i in 1:length(U_real_slack)
-    voltage_n4[i] = sqrt.(U_real_n4[i] .+ U_imag_n4[i])
-end
-
-U_real_n5=[u[24] for u in sol.u].^2
-U_imag_n5= [u[25] for u in sol.u].^2
-voltage_n5 = zeros(length(U_real_slack))
-for i in 1:length(U_real_slack)
-    voltage_n5[i] = sqrt.(U_real_n5[i] .+ U_imag_n5[i])
-end
-
-U_real_n6=[u[31] for u in sol.u].^2
-U_imag_n6= [u[32] for u in sol.u].^2
-voltage_n6 = zeros(length(U_real_slack))
-for i in 1:length(U_real_slack)
-    voltage_n6[i] = sqrt.(U_real_n6[i] .+ U_imag_n6[i])
-end
-
-U_real_n7=[u[38] for u in sol.u].^2
-U_imag_n7= [u[39] for u in sol.u].^2
-voltage_n7 = zeros(length(U_real_slack))
-for i in 1:length(U_real_slack)
-    voltage_n7[i] = sqrt.(U_real_n7[i] .+ U_imag_n7[i])
-end
-
-U_real_n8=[u[45] for u in sol.u].^2
-U_imag_n8= [u[46] for u in sol.u].^2
-voltage_n8 = zeros(length(U_real_slack))
-for i in 1:length(U_real_slack)
-    voltage_n8[i] = sqrt.(U_real_n8[i] .+ U_imag_n8[i])
-end
-
-U_real_n9=[u[52] for u in sol.u].^2
-U_imag_n9= [u[53] for u in sol.u].^2
-voltage_n9 = zeros(length(U_real_slack))
-for i in 1:length(U_real_slack)
-    voltage_n9[i] = sqrt.(U_real_n9[i] .+ U_imag_n9[i])
-end
-
-U_real_n10=[u[59] for u in sol.u].^2
-U_imag_n10= [u[60] for u in sol.u].^2
-voltage_n10 = zeros(length(U_real_slack))
-for i in 1:length(U_real_slack)
-    voltage_n10[i] = sqrt.(U_real_n10[i] .+ U_imag_n10[i])
-end
-
-U_real_n11=[u[66] for u in sol.u].^2
-U_imag_n11= [u[67] for u in sol.u].^2
-voltage_n11 = zeros(length(U_real_slack))
-for i in 1:length(U_real_slack)
-    voltage_n11[i] = sqrt.(U_real_n11[i] .+ U_imag_n11[i])
-end
-
-U_real_n12=[u[73] for u in sol.u].^2
-U_imag_n12= [u[74] for u in sol.u].^2
-voltage_n12 = zeros(length(U_real_slack))
-for i in 1:length(U_real_slack)
-    voltage_n12[i] = sqrt.(U_real_n12[i] .+ U_imag_n12[i])
-end
-
-# for (j,k) in ([3,10,17,24,31,38,45,52,59,66,73],[2:12])
-#     U_real_n = zeros(length(U_real_slack))
-#     U_imag_n = zeros(length(U_real_slack))
-#     U_real_n[k]=[u[j] for u in sol.u].^2
-#     U_imag_n[k]= [u[j+1] for u in sol.u].^2
-#     voltage_n[k] = zeros(length(U_real_slack))
-#     for i in 1:length(U_real_slack)
-#         voltage_n[k][i] = sqrt.(U_real_slack[i] .+ U_imag_slack[i])
-#     end
+# U_real_slack=[u[1] for u in sol.u].^2
+# U_imag_slack= [u[2] for u in sol.u].^2
+# voltage_slack = zeros(length(U_real_slack))
+# for i in 1:length(U_real_slack)
+#     voltage_slack[i] = sqrt.(U_real_slack[i] .+ U_imag_slack[i])
 # end
+
+# U_real_n2=[u[3] for u in sol.u].^2
+# U_imag_n2= [u[4] for u in sol.u].^2
+# voltage_n2 = zeros(length(U_real_slack))
+# for i in 1:length(U_real_slack)
+#     voltage_n2[i] = sqrt.(U_real_n2[i] .+ U_imag_n2[i])
+# end
+
+# U_real_n3=[u[10] for u in sol.u].^2
+# U_imag_n3= [u[11] for u in sol.u].^2
+# voltage_n3 = zeros(length(U_real_slack))
+# for i in 1:length(U_real_slack)
+#     voltage_n3[i] = sqrt.(U_real_n3[i] .+ U_imag_n3[i])
+# end
+
+# U_real_n4=[u[17] for u in sol.u].^2
+# U_imag_n4= [u[18] for u in sol.u].^2
+# voltage_n4 = zeros(length(U_real_slack))
+# for i in 1:length(U_real_slack)
+#     voltage_n4[i] = sqrt.(U_real_n4[i] .+ U_imag_n4[i])
+# end
+
+# U_real_n5=[u[24] for u in sol.u].^2
+# U_imag_n5= [u[25] for u in sol.u].^2
+# voltage_n5 = zeros(length(U_real_slack))
+# for i in 1:length(U_real_slack)
+#     voltage_n5[i] = sqrt.(U_real_n5[i] .+ U_imag_n5[i])
+# end
+
+# U_real_n6=[u[31] for u in sol.u].^2
+# U_imag_n6= [u[32] for u in sol.u].^2
+# voltage_n6 = zeros(length(U_real_slack))
+# for i in 1:length(U_real_slack)
+#     voltage_n6[i] = sqrt.(U_real_n6[i] .+ U_imag_n6[i])
+# end
+
+# U_real_n7=[u[38] for u in sol.u].^2
+# U_imag_n7= [u[39] for u in sol.u].^2
+# voltage_n7 = zeros(length(U_real_slack))
+# for i in 1:length(U_real_slack)
+#     voltage_n7[i] = sqrt.(U_real_n7[i] .+ U_imag_n7[i])
+# end
+
+# U_real_n8=[u[45] for u in sol.u].^2
+# U_imag_n8= [u[46] for u in sol.u].^2
+# voltage_n8 = zeros(length(U_real_slack))
+# for i in 1:length(U_real_slack)
+#     voltage_n8[i] = sqrt.(U_real_n8[i] .+ U_imag_n8[i])
+# end
+
+# U_real_n9=[u[52] for u in sol.u].^2
+# U_imag_n9= [u[53] for u in sol.u].^2
+# voltage_n9 = zeros(length(U_real_slack))
+# for i in 1:length(U_real_slack)
+#     voltage_n9[i] = sqrt.(U_real_n9[i] .+ U_imag_n9[i])
+# end
+
+# U_real_n10=[u[59] for u in sol.u].^2
+# U_imag_n10= [u[60] for u in sol.u].^2
+# voltage_n10 = zeros(length(U_real_slack))
+# for i in 1:length(U_real_slack)
+#     voltage_n10[i] = sqrt.(U_real_n10[i] .+ U_imag_n10[i])
+# end
+
+# U_real_n11=[u[66] for u in sol.u].^2
+# U_imag_n11= [u[67] for u in sol.u].^2
+# voltage_n11 = zeros(length(U_real_slack))
+# for i in 1:length(U_real_slack)
+#     voltage_n11[i] = sqrt.(U_real_n11[i] .+ U_imag_n11[i])
+# end
+
+# U_real_n12=[u[73] for u in sol.u].^2
+# U_imag_n12= [u[74] for u in sol.u].^2
+# voltage_n12 = zeros(length(U_real_slack))
+# for i in 1:length(U_real_slack)
+#     voltage_n12[i] = sqrt.(U_real_n12[i] .+ U_imag_n12[i])
+# end
+
+# U_real_slack=[u[1] for u in sol.u].^2
+# U_imag_slack= [u[2] for u in sol.u].^2
+# voltage_slack = zeros(length(U_real_slack))
+# for i in 1:length(U_real_slack)
+#     voltage_slack[i] = sqrt.(U_real_slack[i] .+ U_imag_slack[i])
+# end
+array_length = length([u[1] for u in sol.u])
+node_length = length(busses)
+U_real_n = zeros(node_length,array_length)
+U_imag_n = zeros(node_length,array_length) 
+voltage_n = zeros(node_length,array_length)
+# U_real_n[1,:] = U_real_slack
+# U_imag_n[1,:] = U_imag_slack
+# voltage_n[1,:] = voltage_slack
+for (j,k) in (enumerate([1,3,10,17,24,31,38,45,52,59,66,73]))
+    
+    U_real_n[j,:]=[u[k] for u in sol.u].^2
+    U_imag_n[j,:]= [u[k+1] for u in sol.u].^2
+    # println(U_real_n)
+    # println(U_imag_n)
+    # voltage_n[j+1,length(U_real_slack)] = zeros(length(U_real_slack))
+    for i in 1:array_length
+        voltage_n[j,i] = sqrt.(U_real_n[j,i] .+ U_imag_n[j,i])
+    end
+    # println(voltage_n)
+end
 
 result = DataFrame(   #data table
     t = sol.t,
-    voltage_slack = voltage_slack,
-    voltage_node2 = voltage_n2,
-    voltage_node3 = voltage_n3,
-    voltage_node4 = voltage_n4,
-    voltage_node5 = voltage_n5,
-    voltage_node6 = voltage_n6,
-    voltage_node7 = voltage_n7,
-    voltage_node8 = voltage_n8,
-    voltage_node9 = voltage_n9,
-    voltage_node10 = voltage_n10,
-    voltage_node11 = voltage_n11,
-    voltage_node12 = voltage_n12,
+    voltage_slack = voltage_n[1,:],
+    voltage_node2 = voltage_n[2,:],
+    voltage_node3 = voltage_n[3,:],
+    voltage_node4 = voltage_n[4,:],
+    voltage_node5 = voltage_n[5,:],
+    voltage_node6 = voltage_n[6,:],
+    voltage_node7 = voltage_n[7,:],
+    voltage_node8 = voltage_n[8,:],
+    voltage_node9 = voltage_n[9,:],
+    voltage_node10 = voltage_n[10,:],
+    voltage_node11 = voltage_n[11,:],
+    voltage_node12 = voltage_n[12,:],
+    # voltage_node2 = voltage_n2,
+    # voltage_node3 = voltage_n3,
+    # voltage_node4 = voltage_n4,
+    # voltage_node5 = voltage_n5,
+    # voltage_node6 = voltage_n6,
+    # voltage_node7 = voltage_n7,
+    # voltage_node8 = voltage_n8,
+    # voltage_node9 = voltage_n9,
+    # voltage_node10 = voltage_n10,
+    # voltage_node11 = voltage_n11,
+    # voltage_node12 = voltage_n12,
 )
 
 plot(result.t, result.voltage_slack,ylims=(0.93,1.05),title = "Voltage", 
